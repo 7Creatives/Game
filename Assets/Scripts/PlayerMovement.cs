@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed = 2.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
+    public Animator Animator;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,29 @@ public class PlayerMovement : MonoBehaviour
         if (movement != Vector3.zero)
         {
             gameObject.transform.forward = movement;
+            Animator.SetFloat("Movement",0.5f);
         }
+        else
+        {
+            Animator.SetFloat("Movement",0f);
+        }
+
+        // Jump
+        if(Input.GetButtonDown("Jump")&& IsGrounded)
+        {
+            //Jump action
+            Animator.SetBool("Jump",true);
+        }
+        else{
+            Animator.SetBool("Jump",false);
+        }
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        charController.Move(playerVelocity*Time.deltaTime);
+    }
+
+    public void JumpAction()
+    {
+        playerVelocity.y += Mathf.Sqrt(jumpHeight* -3.0f*gravityValue);
     }
 }
