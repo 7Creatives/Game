@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float gravityValue = -9.81f;
     public Animator Animator;
     public float initialSpeed;
+
+    public float rotationSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +30,17 @@ public class PlayerMovement : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+        float y =Input.GetAxis("Horizontal");
+        float x = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(y,0,x);
         charController.Move(movement*Time.deltaTime*playerSpeed);
 
         if (movement != Vector3.zero)
         {
-            gameObject.transform.forward = movement;
+            //gameObject.transform.forward = movement;
+            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
             Animator.SetFloat("Movement",0.5f);
         }
         else
@@ -44,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButton("Fire3")&& IsGrounded)
         {
             Animator.SetFloat("Movement",1f);
-            playerSpeed = 4f;
+            playerSpeed =  6;
         }
         else
         {
@@ -61,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Animator.SetBool("Jump",false);
         }    
+             
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         charController.Move(playerVelocity*Time.deltaTime);
