@@ -11,11 +11,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
     public Animator Animator;
-
+    public float initialSpeed;
     // Start is called before the first frame update
     void Start()
     {
         charController = GetComponent<CharacterController>();
+        initialSpeed = playerSpeed;
     }
 
     // Update is called once per frame
@@ -40,15 +41,26 @@ public class PlayerMovement : MonoBehaviour
             Animator.SetFloat("Movement",0f);
         }
 
+        if(Input.GetButton("Fire3")&& IsGrounded)
+        {
+            Animator.SetFloat("Movement",1f);
+            playerSpeed = 4f;
+        }
+        else
+        {
+            playerSpeed = initialSpeed;
+        }
+        
         // Jump
         if(Input.GetButtonDown("Jump")&& IsGrounded)
         {
             //Jump action
             Animator.SetBool("Jump",true);
         }
-        else{
+        else
+        {
             Animator.SetBool("Jump",false);
-        }
+        }    
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         charController.Move(playerVelocity*Time.deltaTime);
