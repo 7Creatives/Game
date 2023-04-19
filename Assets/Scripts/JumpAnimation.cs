@@ -6,6 +6,6 @@ public class JumpAnimation : MonoBehaviour
 {
    public void Jump()
    {
-        GetComponentInParent<PlayerMovement>().JumpAction();
+      GetComponentInParent<PlayerMovement>().JumpAction();
    }
 }

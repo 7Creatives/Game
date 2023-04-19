@@ -50,8 +50,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButton("Fire3")&& IsGrounded)
         {
-            Animator.SetFloat("Movement",1f);
-            playerSpeed =  6;
+            if (movement != Vector3.zero)
+            {
+                Animator.SetFloat("Movement",1f);
+                playerSpeed =  6;
+            }   
         }
         else
         {
