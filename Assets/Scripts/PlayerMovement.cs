@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed = 2.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
+    public float gravityScale = 1f;
+    public float MinJumpHeight = 2f;
+    public float LowerJumpHeight = 2f;
     public Animator Animator;
     public float initialSpeed;
 
@@ -65,20 +68,27 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump")&& IsGrounded)
         {
             //Jump action
-            Animator.SetBool("Jump",true);
+            Animator.SetTrigger("Jump");
         }
         else
         {
-            Animator.SetBool("Jump",false);
-        }    
+            if(playerVelocity.y > MinJumpHeight )
+            {
+                gravityScale = 3f;
+            }
+            else if(playerVelocity.y <= .5f )
+            {
+                gravityScale = 1f;
+            }
+        }   
              
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        playerVelocity.y += gravityValue*gravityScale * Time.deltaTime;
         charController.Move(playerVelocity*Time.deltaTime);
     }
 
     public void JumpAction()
     {
-        playerVelocity.y += Mathf.Sqrt(jumpHeight* -3.0f*gravityValue);
+        playerVelocity.y += Mathf.Sqrt(jumpHeight* -3.0f*(gravityValue* gravityScale));
     }
 }
