@@ -2317,6 +2317,10 @@ MonoBehaviour:
   building: {fileID: 1339522186}
   CashToUnlock: 100
   cashToUnlock: {fileID: 803599487}
+  UnlockImage: {fileID: 1710137406}
+  UnlockRate: 10
+  UnlockAmount: 0
+  canUnlock: 0
 --- !u!1 &1551250527
 GameObject:
   m_ObjectHideFlags: 0
