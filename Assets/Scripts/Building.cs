@@ -7,31 +7,38 @@ using UnityEngine.UI;
 public class Building : MonoBehaviour
 {
     public GameObject building;
+
     public int CashToUnlock;
     public TMP_Text cashToUnlock;
     public Image UnlockImage; 
     public float UnlockRate = 10;
-    public float UnlockAmount;
+    public float fillmeter;
     public bool canUnlock;
     // Start is called before the first frame update
     void Start()
     {
-        cashToUnlock.text = "Ksh. " + CashToUnlock.ToString();
-        UnlockImage.fillAmount = UnlockAmount;
+        cashToUnlock.text = "Ksh. " + CashToUnlock.ToString(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        UnlockImage.fillAmount = Mathf.Lerp(UnlockImage.fillAmount,UnlockAmount,UnlockRate*Time.deltaTime)/100f;
         if(Input.GetKeyDown(KeyCode.M))
         {
-            UnlockBuilding();
+            UnlockBuilding(10);
+            if(fillmeter>=CashToUnlock)
+            {
+                //unlock house
+                building.SetActive(true);
+                
+            }
         }
+        UnlockImage.fillAmount = (fillmeter/CashToUnlock);
     }
 
-    public void UnlockBuilding()
+    public void UnlockBuilding(float Amount)
     {
-        UnlockAmount += 10;
+        fillmeter = fillmeter + Amount;
+       
     }
 }
