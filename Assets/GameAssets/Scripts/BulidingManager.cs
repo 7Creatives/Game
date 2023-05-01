@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulidingManager : MonoBehaviour
 {
+    public Buildings[] _buildings;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +16,17 @@ public class BulidingManager : MonoBehaviour
     {
         
     }
+
+    public void DestroyCash()
+    {
+
+    }
+}
+
+[System.Serializable]
+public class Buildings
+{
+    public string Buildingname;
+    public GameObject Building;
+    public List<GameObject> Cash = new List<GameObject>();
 }

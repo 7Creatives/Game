@@ -7,6 +7,7 @@ public class CashManager : MonoBehaviour
 {
     public int Amount = 0;
     public TMP_Text CashAmount;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 975407056877255431}
   - component: {fileID: 2019412590322729420}
   - component: {fileID: 8273470765377377101}
-  - component: {fileID: 2514382919563671872}
   m_Layer: 0
   m_Name: Cash
   m_TagString: Untagged
@@ -338,19 +337,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2514382919563671872
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5761920263244970858}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7008457385430602220
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +348,6 @@ GameObject:
   - component: {fileID: 4860158388291716502}
   - component: {fileID: 3976576666482869968}
   - component: {fileID: 2230486121329970930}
-  - component: {fileID: 49838872562098672}
   m_Layer: 0
   m_Name: Cashsides
   m_TagString: Untagged
@@ -435,19 +420,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &49838872562098672
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7008457385430602220}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8002820325154041175
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +431,6 @@ GameObject:
   - component: {fileID: 7460761182718923193}
   - component: {fileID: 4842499810147230031}
   - component: {fileID: 1769697285954830655}
-  - component: {fileID: 5370530077639624224}
   m_Layer: 0
   m_Name: Cashband
   m_TagString: Untagged
@@ -532,19 +503,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5370530077639624224
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8002820325154041175}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8458264717364629672
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +514,6 @@ GameObject:
   - component: {fileID: 6040339644904986404}
   - component: {fileID: 1335377368257022989}
   - component: {fileID: 7157906231647697650}
-  - component: {fileID: 8287843075094741268}
   m_Layer: 0
   m_Name: Cashsides
   m_TagString: Untagged
@@ -629,19 +586,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8287843075094741268
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8458264717364629672}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8491522006034205996
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +595,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8491522006034205997}
+  - component: {fileID: 3784950702206581759}
+  - component: {fileID: -4949527428226521468}
   m_Layer: 0
   m_Name: Cash
   m_TagString: Untagged
@@ -679,6 +625,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3784950702206581759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491522006034205996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32225257, y: 0.21447831, z: 0.6158557}
+  m_Center: {x: 0, y: 0.0014542341, z: 0}
+--- !u!114 &-4949527428226521468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491522006034205996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb33e7a6b16e6f4e99089a6983c9dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8926988106866848178
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +661,6 @@ GameObject:
   - component: {fileID: 5176827227916054404}
   - component: {fileID: 7836832962402617541}
   - component: {fileID: 2449311238371595692}
-  - component: {fileID: 6848943296776154144}
   m_Layer: 0
   m_Name: Cashsides
   m_TagString: Untagged
@@ -763,16 +733,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6848943296776154144
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8926988106866848178}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

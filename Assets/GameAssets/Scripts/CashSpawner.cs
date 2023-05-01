@@ -10,14 +10,16 @@ public class CashSpawner : MonoBehaviour
     public Vector3 Spacing = new Vector3(1, 1, 1);
     public Transform Parent;
 
+    [HideInInspector]
+    public List<GameObject> CashPrefab = new List<GameObject>();
     public void spawncash()
     {
         if (AvailableSpawnPos.y > Bounds.y)
         {
             return;
         }
-        GameObject Go = Instantiate(Cash,Parent);
-        Go.transform.localPosition = AvailableSpawnPos;
+        GameObject CashItem = Instantiate(Cash,Parent);
+        CashItem.transform.localPosition = AvailableSpawnPos;
         AvailableSpawnPos.x +=Spacing.x;
         if (AvailableSpawnPos.x > Bounds.x)
         {
@@ -31,6 +33,7 @@ public class CashSpawner : MonoBehaviour
             AvailableSpawnPos.z =-Bounds.z;
             AvailableSpawnPos.y +=Spacing.y;
         }
+        CashPrefab.Add(CashItem);
     }
 
 }
