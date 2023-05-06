@@ -64,7 +64,8 @@ public class MovementHandler : MonoBehaviour
                     speed = initialSpeed;
                 }
             }
-            else{
+            else
+            {
                 Animator.SetFloat("Movement",0f);
             }
         }

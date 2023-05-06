@@ -13,13 +13,15 @@ public class CollisionHandler : MonoBehaviour
             hit.gameObject.GetComponentInParent<BuildingHandler>().UnlockBuilding(10);
         }
 
-        if(hit.gameObject.GetComponentInChildren<Cash>() != null)
+        if(hit.gameObject.GetComponentInParent<Cash>() != null)
         {
-            //DestroyCash
-            
+
             // AddTo The Ui
             CashManager_.IncreaseCash(1);
             Debug.Log("profits");
+            GameObject Go = hit.gameObject.GetComponentInChildren<Cash>().gameObject;
+            //DestroyCash
+            Destroy(Go);
 
         }
     }

@@ -9,9 +9,12 @@ public class CashSpawner : MonoBehaviour
     public Vector3 Bounds = new Vector3(1, 1, 1);
     public Vector3 Spacing = new Vector3(1, 1, 1);
     public Transform Parent;
-
-    [HideInInspector]
     public List<GameObject> CashPrefab = new List<GameObject>();
+
+    private void Start() 
+    {
+
+    }
     public void spawncash()
     {
         if (AvailableSpawnPos.y > Bounds.y)
@@ -36,4 +39,12 @@ public class CashSpawner : MonoBehaviour
         CashPrefab.Add(CashItem);
     }
 
+    public bool IsFull()
+    {
+        if(AvailableSpawnPos.y > Bounds.y)
+        {
+            return true;
+        }
+        return false;
+    }
 }

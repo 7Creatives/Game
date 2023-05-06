@@ -33,7 +33,6 @@ public class CashManager : MonoBehaviour
     public void IncreaseCash(int CashToIncrease)
     {
         Amount = Amount + CashToIncrease;
-
     }
 
     public void DecreaseCash(int CashToDecrease)
