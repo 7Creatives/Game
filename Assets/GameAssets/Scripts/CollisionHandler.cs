@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    public CashManager CashManager_;
     private void OnControllerColliderHit(ControllerColliderHit hit) 
     {
         if(hit.gameObject.GetComponentInChildren<CashSpawner>() != null)
         {
             Debug.Log("Invest");
-            hit.gameObject.GetComponentInParent<BuildingHandler>().UnlockBuilding(10);
+            hit.gameObject.GetComponentInParent<BuildingHandler>().Unlocker(GameManager.Instance.GamePlayVariables_.AmountToDecrease);
+            GameManager.Instance.CashManager_.DecreaseCash(Mathf.FloorToInt(GameManager.Instance.GamePlayVariables_.AmountToDecrease));
         }
 
         if(hit.gameObject.GetComponentInParent<Cash>() != null)
         {
 
             // AddTo The Ui
-            CashManager_.IncreaseCash(1);
+            GameManager.Instance.CashManager_.IncreaseCash(Mathf.FloorToInt(GameManager.Instance.GamePlayVariables_.AmountToIncrease));
             Debug.Log("profits");
             GameObject Go = hit.gameObject.GetComponentInChildren<Cash>().gameObject;
             //DestroyCash

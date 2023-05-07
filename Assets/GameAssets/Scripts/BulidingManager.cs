@@ -10,16 +10,14 @@ public class BulidingManager : MonoBehaviour
     {
         public string Buildingname = "buildingName" ;
         public GameObject _Building;
-        float ProfitCollectedTimeStamp;
-        float cashTimer;
         public bool canUnlock;
-        public bool IsTaxable;
+        public bool canTax;
         public List<GameObject> Cash = new List<GameObject>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        UnlockBuilding("Shop");
+        UnlockBuilding("Shop",true,true);
        
     }
 
@@ -33,31 +31,23 @@ public class BulidingManager : MonoBehaviour
     {
 
     }
-    public void AutoProfits()
-    {
-        
-        // if (cashTimer < Time.time)
-        // {
-        //     cashTimer = Time.time + ProfitRate;
 
-        //     if(ProfitCollectedTimeStamp < Time.time)
-        //     {
-        //         SpawnCash();
-        //     }
-            
-        // }
-    }
-
-    public void UnlockBuilding(string _Buildingname)
+    public void UnlockBuilding(string _Buildingname,bool isUnlockable,bool isTaxable)
     {
         for(int i = 0; i < _buildings.Length;i++)
         {
+            
             if(_buildings[i].Buildingname == _Buildingname)
-            {
-                _buildings[i].canUnlock = true;
-                if(_buildings[i].canUnlock)
+            {    
+                _buildings[i].canUnlock = isUnlockable;
+                _buildings[i].canTax = isTaxable;
+                if(isUnlockable)
                 {
                     _buildings[i]._Building.SetActive(true);
+                    if(isTaxable)
+                    {
+                        //start taxing
+                    }
                 }
                 else
                 {
@@ -67,12 +57,11 @@ public class BulidingManager : MonoBehaviour
             }
             else
             {
-                _buildings[i].canUnlock = false;
+                isUnlockable =false;
+                isTaxable = false;
             }
-           
         }
     }
 
-    
 }
 

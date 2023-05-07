@@ -6,17 +6,19 @@ using TMPro;
 
 public class BuildingHandler : MonoBehaviour
 {
-   
     public float ProfitRate = 10;
     public GameObject building;
-    public int CashToUnlock;
+    public float CashAmountToUnlock;
     public TMP_Text cashToUnlock;
     public Image UnlockImage; 
     public float fillmeter;
+
+    float ProfitCollectedTimeStamp;
+    float cashTimer;
     // Start is called before the first frame update
     void Start()
     {
-        cashToUnlock.text = "Ksh. " + CashToUnlock.ToString(); 
+        cashToUnlock.text = "Ksh. " + CashAmountToUnlock.ToString(); 
     }
 
     // Update is called once per frame
@@ -25,14 +27,29 @@ public class BuildingHandler : MonoBehaviour
         
     }
 
-    public void UnlockBuilding(float Amount)
+    public void Unlocker(float Amount)
     {
         fillmeter = fillmeter + Amount; 
-        UnlockImage.fillAmount = (fillmeter/CashToUnlock);
+        UnlockImage.fillAmount = (fillmeter/CashAmountToUnlock);
     }
-
+    
     public void SpawnCash()
     {
         GetComponentInChildren<CashSpawner>().spawncash();
+    }
+
+    public void GetProfits()
+    {  
+        if (cashTimer < Time.time)
+        {
+            cashTimer = Time.time + ProfitRate;
+
+            if(ProfitCollectedTimeStamp < Time.time)
+            {
+                SpawnCash();
+                
+            }
+            
+        }
     }
 }

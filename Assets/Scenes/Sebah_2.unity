@@ -1366,6 +1366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426691732}
+  - component: {fileID: 426691733}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1387,9 +1388,24 @@ Transform:
   m_Children:
   - {fileID: 222602562}
   - {fileID: 785189101}
+  - {fileID: 1264194304}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &426691733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426691731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d462b9e1efaaa47b96e529054b1486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CashManager_: {fileID: 222602563}
+  GamePlayVariables_: {fileID: 1264194305}
 --- !u!1 &431338237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,6 +3048,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195718929}
   m_CullTransparentMesh: 1
+--- !u!1 &1264194303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264194304}
+  - component: {fileID: 1264194305}
+  m_Layer: 0
+  m_Name: GameplayVariables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1264194304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264194303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 426691732}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1264194305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264194303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4b522d18d2ed94bb692f0dc934e3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountToDecrease: 10
 --- !u!1 &1297938278
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,17 +3588,17 @@ MonoBehaviour:
   - Buildingname: Shop
     _Building: {fileID: 1339522186}
     canUnlock: 0
-    IsTaxable: 0
+    canTax: 0
     Cash: []
   - Buildingname: Shop_1
     _Building: {fileID: 535246327}
     canUnlock: 0
-    IsTaxable: 0
+    canTax: 0
     Cash: []
   - Buildingname: Shop_2
     _Building: {fileID: 1874258456}
     canUnlock: 0
-    IsTaxable: 0
+    canTax: 0
     Cash: []
 --- !u!1 &1534975500
 GameObject:
