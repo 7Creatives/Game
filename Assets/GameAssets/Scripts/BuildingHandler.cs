@@ -6,44 +6,50 @@ using TMPro;
 
 public class BuildingHandler : MonoBehaviour
 {
-    public BuildingDetails _buildingDetails;
+    public float ProfitRate = 10;
+    public GameObject building;
+    public float CashAmountToUnlock;
+    public TMP_Text cashToUnlock;
+    public Image UnlockImage; 
+    public float fillmeter;
+
+    float ProfitCollectedTimeStamp;
+    float cashTimer;
     // Start is called before the first frame update
     void Start()
     {
-        _buildingDetails.cashToUnlock.text = "Ksh. " + _buildingDetails.CashToUnlock.ToString(); 
+        cashToUnlock.text = "Ksh. " + CashAmountToUnlock.ToString(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            UnlockBuilding(10);
-            if(_buildingDetails.fillmeter>=_buildingDetails.CashToUnlock)
-            {
-
-                _buildingDetails.building.SetActive(true);
-                GetComponentInChildren<CashSpawner>().spawncash();
-            }
-        }
-        _buildingDetails.UnlockImage.fillAmount = (_buildingDetails.fillmeter/_buildingDetails.CashToUnlock);
+        
     }
 
-    public void UnlockBuilding(float Amount)
+    public void Unlocker(float Amount)
     {
-        _buildingDetails.fillmeter = _buildingDetails.fillmeter + Amount;
-       
+        fillmeter = fillmeter + Amount; 
+        UnlockImage.fillAmount = (fillmeter/CashAmountToUnlock);
     }
-}
+    
+    public void SpawnCash()
+    {
+        GetComponentInChildren<CashSpawner>().spawncash();
+    }
 
-[System.Serializable]
-public class BuildingDetails
-{
-    public GameObject building;
-    public int CashToUnlock;
-    public TMP_Text cashToUnlock;
-    public Image UnlockImage; 
-    public float UnlockRate = 10;
-    public float fillmeter;
-    public bool canUnlock;
+    public void GetProfits()
+    {  
+        if (cashTimer < Time.time)
+        {
+            cashTimer = Time.time + ProfitRate;
+
+            if(ProfitCollectedTimeStamp < Time.time)
+            {
+                SpawnCash();
+                
+            }
+            
+        }
+    }
 }
