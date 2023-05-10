@@ -18,13 +18,13 @@ public class CashManager : MonoBehaviour
     void Update()
     {
         //testing
-        if(Input.GetKeyDown(KeyCode.K)){
-            IncreaseCash(10);
-        }
+        // if(Input.GetKeyDown(KeyCode.K)){
+        //     IncreaseCash(10);
+        // }
 
-        if(Input.GetKeyDown(KeyCode.L)){
-            DecreaseCash(5);
-        }
+        // if(Input.GetKeyDown(KeyCode.L)){
+        //     DecreaseCash(5);
+        // }
 
         // update the cash ui
         CashAmount.text = "Ksh. " + Amount.ToString();
