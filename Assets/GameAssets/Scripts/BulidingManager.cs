@@ -22,42 +22,24 @@ public class BulidingManager : MonoBehaviour
 
     float ProfitCollectedTimeStamp;
     float cashTimer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //how much we need to unlock vs how much we have contributed
-       
-        
-    }
-    
-    public void SpawnCash()
-    {
-        GetComponentInChildren<CashSpawner>().spawncash();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void DestroyCash()
-    {
-
-    }
-
-    public void UnlockBuilding(string _Buildingname)
+    public void UnlockBuilding()
     {
         for(int i = 0; i < _buildings.Length;i++)
         {
 
-            if(_buildings[i].Buildingname == _Buildingname)
+            if(_buildings[i].buildingHandler.fillmeter >= _buildings[i].buildingHandler.CashAmountToUnlock)
             {
                 _buildings[i].canUnlock = true;
                 //unloocking
                 if(_buildings[i].canUnlock)
                 {
+                    _buildings[i].canTax = true;
                    _buildings[i]._Building.SetActive(true); 
+                   if(_buildings[i].canTax)
+                   {
+                        GenerateCash();
+                   }
                 }
                 else
                 {
@@ -67,24 +49,29 @@ public class BulidingManager : MonoBehaviour
             else
             {
                 _buildings[i]._Building.SetActive(false);
+                _buildings[i].canUnlock = false;
+                _buildings[i].canTax = false;
             }
         }
     }
 
 
-    public void GenerateCash(bool IsTaxable)
+    public void GenerateCash()
     {
         //generate cash
- 
-        if (cashTimer < Time.time)
+        for(int i = 0; i<_buildings.Length;i++)
         {
-            
-            //cashTimer = Time.time + ProfitRate;
-
-            if(ProfitCollectedTimeStamp < Time.time)
+            if (cashTimer < Time.time)
             {
-                SpawnCash();     
+                
+                cashTimer = Time.time + _buildings[i].ProfitRate;
+
+                if(ProfitCollectedTimeStamp < Time.time)
+                {
+                    _buildings[i].buildingHandler.GetComponentInChildren<CashSpawner>().spawncash();
+                }
             }
         }
+        
     }
 }

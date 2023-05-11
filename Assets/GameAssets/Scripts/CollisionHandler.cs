@@ -10,19 +10,31 @@ public class CollisionHandler : MonoBehaviour
         {
             Debug.Log("Invest");
             hit.gameObject.GetComponentInParent<BuildingHandler>().Unlocker(GameManager.Instance.GamePlayVariables_.AmountToDecrease);
-            GameManager.Instance.CashManager_.DecreaseCash(Mathf.FloorToInt(GameManager.Instance.GamePlayVariables_.AmountToDecrease));
+            //GameManager.Instance.CashManager_.DecreaseCash(Mathf.FloorToInt(GameManager.Instance.GamePlayVariables_.AmountToDecrease));
+
+            //Unlock building
+            hit.gameObject.GetComponentInParent<BulidingManager>().UnlockBuilding();
+
         }
 
         if(hit.gameObject.GetComponentInParent<Cash>() != null)
         {
 
-            // AddTo The Ui
+            
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if(other.gameObject.GetComponentInParent<Cash>() != null)
+        {
+            //// AddTo The Ui
             GameManager.Instance.CashManager_.IncreaseCash(Mathf.FloorToInt(GameManager.Instance.GamePlayVariables_.AmountToIncrease));
             Debug.Log("profits");
-            GameObject Go = hit.gameObject.GetComponentInChildren<Cash>().gameObject;
+            GameObject Go = other.gameObject.GetComponentInChildren<Cash>().gameObject;
             //DestroyCash
             Destroy(Go);
-
         }
     }
 }
