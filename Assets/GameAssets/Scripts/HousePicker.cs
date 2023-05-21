@@ -6,7 +6,10 @@ public class HousePicker : MonoBehaviour
 {
     public enum HouseSelector
     {
-        Shop,
+        Shop_1,
+        Shop_2,
+        Shop_3,
+        Shop_4,
         Apartment_1,
         Apartment_2,
         Apartment_3,
@@ -16,6 +19,13 @@ public class HousePicker : MonoBehaviour
         Apartment_7,
         Apartment_8,
         Apartment_9,
+        Apartment_10,
+        Apartment_11,
+        Apartment_12,
+        Mabati_house_1,
+        Mabati_house_2,
+        Mabati_house_3,
+
     }
     public HouseSelector HouseSelector_;
     public List<GameObject> Houses = new List<GameObject>();
@@ -30,7 +40,7 @@ public class HousePicker : MonoBehaviour
     {
         switch(HouseSelector_)
         {
-            case HouseSelector.Shop:
+            case HouseSelector.Shop_1:
             Houses[0].SetActive(true);
             Houses[1].SetActive(false);
             Houses[2].SetActive(false);
@@ -41,8 +51,17 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_1:
+            case HouseSelector.Shop_2:
             Houses[0].SetActive(false);
             Houses[1].SetActive(true);
             Houses[2].SetActive(false);
@@ -53,8 +72,17 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_2:
+            case HouseSelector.Shop_3:
             Houses[0].SetActive(false);
             Houses[1].SetActive(false);
             Houses[2].SetActive(true);
@@ -65,8 +93,17 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_3:
+            case HouseSelector.Shop_4:
             Houses[0].SetActive(false);
             Houses[1].SetActive(false);
             Houses[2].SetActive(false);
@@ -77,8 +114,17 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_4:
+            case HouseSelector.Apartment_1:
             Houses[0].SetActive(false);
             Houses[1].SetActive(false);
             Houses[2].SetActive(false);
@@ -89,8 +135,17 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_5:
+            case HouseSelector.Apartment_2:
             Houses[0].SetActive(false);
             Houses[1].SetActive(false);
             Houses[2].SetActive(false);
@@ -101,8 +156,17 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_6:
+            case HouseSelector.Apartment_3:
             Houses[0].SetActive(false);
             Houses[1].SetActive(false);
             Houses[2].SetActive(false);
@@ -113,8 +177,17 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_7:
+            case HouseSelector.Apartment_4:
             Houses[0].SetActive(false);
             Houses[1].SetActive(false);
             Houses[2].SetActive(false);
@@ -125,9 +198,18 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(true);
             Houses[8].SetActive(false);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
-            case HouseSelector.Apartment_8:
-            Houses[0].SetActive(false);
+            case HouseSelector.Apartment_5:
+             Houses[0].SetActive(false);
             Houses[1].SetActive(false);
             Houses[2].SetActive(false);
             Houses[3].SetActive(false);
@@ -137,6 +219,78 @@ public class HousePicker : MonoBehaviour
             Houses[7].SetActive(false);
             Houses[8].SetActive(true);
             Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
+            break;
+            case HouseSelector.Apartment_6:
+             Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(true);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
+            break;
+            case HouseSelector.Apartment_7:
+            Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(true);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
+            break;
+            case HouseSelector.Apartment_8:
+             Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(true);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
             case HouseSelector.Apartment_9:
             Houses[0].SetActive(false);
@@ -148,9 +302,144 @@ public class HousePicker : MonoBehaviour
             Houses[6].SetActive(false);
             Houses[7].SetActive(false);
             Houses[8].SetActive(false);
-            Houses[9].SetActive(true);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(true);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
             break;
+            case HouseSelector.Apartment_10:
+             Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(true);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
+            break;
+            case HouseSelector.Apartment_11:
+            Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(true);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
+            break;
+            case HouseSelector.Apartment_12:
+           Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(true);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
+            break;
+            case HouseSelector.Mabati_house_1:
+             Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(true);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(false);
+            break;
+            case HouseSelector.Mabati_house_2:
+             Houses[0].SetActive(false);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(true);
+            Houses[18].SetActive(false);
 
+            break;
+            case HouseSelector.Mabati_house_3:
+            Houses[0].SetActive(true);
+            Houses[1].SetActive(false);
+            Houses[2].SetActive(false);
+            Houses[3].SetActive(false);
+            Houses[4].SetActive(false);
+            Houses[5].SetActive(false);
+            Houses[6].SetActive(false);
+            Houses[7].SetActive(false);
+            Houses[8].SetActive(false);
+            Houses[9].SetActive(false);
+            Houses[10].SetActive(false);
+            Houses[11].SetActive(false);
+            Houses[12].SetActive(false);
+            Houses[13].SetActive(false);
+            Houses[14].SetActive(false);
+            Houses[15].SetActive(false);
+            Houses[16].SetActive(false);
+            Houses[17].SetActive(false);
+            Houses[18].SetActive(true);
+            break;
         }
     }
 }
