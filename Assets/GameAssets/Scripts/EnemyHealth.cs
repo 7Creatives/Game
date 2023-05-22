@@ -34,6 +34,6 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EM_healthUI_Red.fillAmount = Mathf.Lerp(EM_healthUI_Green.fillAmount,currentHealth/MaxHealth,HealthUI_rate * Time.deltaTime);
+        EM_healthUI_Red.fillAmount = Mathf.Lerp(EM_healthUI_Red.fillAmount,currentHealth/MaxHealth,HealthUI_rate * Time.deltaTime);
     }
 }
