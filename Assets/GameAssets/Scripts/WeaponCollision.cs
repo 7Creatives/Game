@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class WeaponCollision : MonoBehaviour
 {
-    // private void OnCollisionEnter(Collision other) {
-    //     if(other.gameObject.GetComponent<EnemyCollisionHandler>() != null)
-    //     {
-    //         Debug.Log("Hit");
-    //     }
-    // }
+    public EnemyHealth enemyHealth;
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.GetComponent<EnemyCollisionHandler>() != null)
+        {
+            Debug.Log("Hit");
+            // reduce EnemyHealth
+            enemyHealth.TakeDamage(25);
+        }
+    }
 }
