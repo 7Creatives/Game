@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
+    public GameObject enemy;
     private void OnControllerColliderHit(ControllerColliderHit hit) 
     {
         if(hit.gameObject.GetComponentInChildren<CashSpawner>() != null)
