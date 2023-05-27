@@ -15,9 +15,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(transform.position,player.transform.position);
-        if(dist<=2)
+        if(dist<=5)
         {
-            player.transform.position = transform.position + new Vector3(0,0,1.5f);
+            
         }
     }
 }

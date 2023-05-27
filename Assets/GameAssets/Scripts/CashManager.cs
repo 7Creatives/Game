@@ -17,15 +17,6 @@ public class CashManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //testing
-        // if(Input.GetKeyDown(KeyCode.K)){
-        //     IncreaseCash(10);
-        // }
-
-        // if(Input.GetKeyDown(KeyCode.L)){
-        //     DecreaseCash(5);
-        // }
-
         // update the cash ui
         CashAmount.text = "Ksh. " + Amount.ToString();
     }
@@ -41,6 +32,7 @@ public class CashManager : MonoBehaviour
         if(Amount <=0)
         {
             Amount = 0;
+            return;
         }
     }
 }
