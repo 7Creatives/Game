@@ -7,7 +7,7 @@ public class WeaponCollision : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.GetComponent<EnemyCollisionHandler>() != null)
         {
-            if(GetComponentInParent<PlayerCombat>().IsFighting)
+            if(GameManager.Instance.PlayerCombat_.IsFighting)
             {
                 Debug.Log("Hit");
                 GetComponentInParent<CollisionHandler>().enemy.GetComponent<EnemyHealth>().TakeDamage(25);

@@ -27,7 +27,9 @@ public class EnemyHealth : MonoBehaviour
         {
             isEnemyDead = true;
             //GetComponentInParent<EnemyController>().Enemies.Remove(this.gameObject);
-            Destroy(this.gameObject);
+           GetComponent<Enemy>().Anim.enabled = false;
+           GetComponentInChildren<Rigidbody>().isKinematic = true;
+           GetComponentInChildren<Collider>().enabled = false;
         }
     }
 

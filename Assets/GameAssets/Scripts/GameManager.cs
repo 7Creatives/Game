@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance{get;private set;} 
     public CashManager CashManager_;
     public GamePlayVariables GamePlayVariables_;
+    public PlayerCombat PlayerCombat_;
     public void Awake()
     {   
         if(Instance != null && Instance != this)

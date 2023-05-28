@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
+    public Animator Anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +15,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector3.Distance(transform.position,player.transform.position);
-        if(dist<=5)
-        {
+        // float dist = Vector3.Distance(transform.position,player.transform.position);
+        // if(dist<=5)
+        // {
             
-        }
+        // }
     }
 }
