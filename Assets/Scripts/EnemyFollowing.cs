@@ -4,108 +4,88 @@ using UnityEngine;
 
 	public class EnemyFollowing : MonoBehaviour
 	{
-		public int speed;
-		public GameObject player;
-		Vector3 InitialPos;
+		public GameObject Player;
+		public float moveSpeed;
+		public bool chasing;
+		public float distanceToChase = 10f;
+		public float distanceToLose = 15f;
+		public float distanceToStop = 2f;
+		public float distanceToFight = 1f;
+		private Vector3 targetPoint;
+		private Vector3 startPoint;
 
-		public float DistTofollow;
-		public float DistToStopFollowing;
+		public float keepChasingTime;
+   		private float chaseCounter;
 
-		public bool CanChase;
-		public bool isChasing;
-		public bool IsStop;
-		public Animator Anim;
-
-		public bool canFight;
+    	public Animator anim;
 
 		private void Start() 
 		{
-			InitialPos = transform.position;
+			startPoint =transform.position;
 		}
 
 		void Update()
 		{ 
-
-			float Dist_ = Vector3.Distance(transform.position,player.transform.position);
-			if(!CanChase)
+			if(GetComponent<EnemyHealth>().isEnemyDead)
 			{
-				Anim.Play("Idle_");
-				if(Dist_<DistTofollow)
-				{
-					CanChase = true;
-				}
-
-				if(isChasing)
-				{
-					isChasing = false;
-					float Distance =Vector3.Distance(transform.position,InitialPos);
-					//stop following
-					if(Distance > 1)
-					{
-						transform.LookAt(InitialPos);
-						transform.position = Vector3.Lerp(transform.position,InitialPos,speed*Time.deltaTime);
-						Anim.Play("Run_");
-					}
-					
-					if(Distance<.1f)
-					{
-						Anim.Play("Idle_");
-					}
-				}
-				
+				chasing = false;
+				targetPoint = transform.position;
 			}
 			else
 			{
-				isChasing = true;
-				//
-				if(Dist_<1.3f)
+				targetPoint = Player.transform.position;
+        		targetPoint.y = transform.position.y;
+			}
+
+
+
+			if(!chasing)
+			{
+				if(Vector3.Distance(transform.position, targetPoint) < distanceToChase)
 				{
-					if(isChasing)
+					chasing = true;
+					anim.Play("Run_");
+					transform.position = Vector3.Lerp(transform.position,targetPoint,moveSpeed*Time.deltaTime);
+
+				}
+
+				if(chaseCounter > 0)
+				{
+					chaseCounter -= Time.deltaTime;
+					if(chaseCounter <= 0)
 					{
-						IsStop = false;
-						if(!IsStop)
-						{	
-							Anim.Play("Idle_");
-							// canFight = true;
-							// if(canFight)
-							// {
-
-							// }
-							// else
-							// {
-
-							// }
-
-						}
-						IsStop = true;	
-						isChasing = false;
+						targetPoint = startPoint;
+						anim.Play("Run_");
+						transform.position = Vector3.Lerp(transform.position,startPoint,moveSpeed*Time.deltaTime);
 					}
-					else
-					{
-						//canFight= false;
-					}	
 				}
-				else
+			}
+			else
+			{
+				if(Vector3.Distance(transform.position, targetPoint) > distanceToStop)
 				{
-					// if(!isChasing)
-					// {
-					// 	isChasing = true;
-					// }
-					Anim.Play("Run_");
+					Player.transform.position = targetPoint;
+					FaceTarget();
+					anim.Play("Run_");
+					transform.position = Vector3.Lerp(transform.position,targetPoint,moveSpeed*Time.deltaTime);
 				}
+				else 
+				{
+					
+				} 
 
-				if(Dist_ > DistToStopFollowing)
+				if(Vector3.Distance(transform.position, targetPoint) > distanceToLose)
 				{
-					CanChase = false;
-				}
+					chasing = false;
+					FaceTarget();
+					chaseCounter = keepChasingTime;
 
-				if(canFight)
-				{
-					//Anim.Play("");
 				}
-				transform.LookAt(player.transform);
-				transform.position = Vector3.Lerp(transform.position,player.transform.position,speed*Time.deltaTime);
-			}	
-			Debug.Log(Dist_);	
+			}
+		}
+
+		void FaceTarget()
+		{
+			transform.LookAt(Player.transform.position);
 		}
 	}

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public CashManager CashManager_;
     public GamePlayVariables GamePlayVariables_;
     public PlayerCombat PlayerCombat_;
+    public EnemyCombat EnemyCombat_;
     public void Awake()
     {   
         if(Instance != null && Instance != this)

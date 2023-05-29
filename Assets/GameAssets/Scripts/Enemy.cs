@@ -6,19 +6,10 @@ public class Enemy : MonoBehaviour
 {
     public GameObject player;
     public Animator Anim;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Model;
 
-    // Update is called once per frame
-    void Update()
+    private void Update() 
     {
-        // float dist = Vector3.Distance(transform.position,player.transform.position);
-        // if(dist<=5)
-        // {
-            
-        // }
+        Model.transform.position = transform.position;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
     public GameObject enemy;
+    private Vector3 Offset;
     private void OnControllerColliderHit(ControllerColliderHit hit) 
     {
         if(hit.gameObject.GetComponentInChildren<CashSpawner>() != null)
@@ -33,6 +34,23 @@ public class CollisionHandler : MonoBehaviour
             GameObject Go = other.gameObject.GetComponentInChildren<Cash>().gameObject;
             //DestroyCash
             Destroy(Go);
+        }
+    }
+
+    private void Update() 
+    {
+        float Dist = Vector3.Distance(transform.position,enemy.transform.position);
+        if(Dist<1.5f)
+        {
+            if(enemy.GetComponentInChildren<EnemyHealth>().isEnemyDead)
+            {
+
+            }
+            else
+            {
+                //stop
+                transform.position = enemy.transform.position + enemy.transform.InverseTransformDirection(0,0,1.2f);
+            } 
         }
     }
 }

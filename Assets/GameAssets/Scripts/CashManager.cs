@@ -11,14 +11,14 @@ public class CashManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CashAmount.text = "Ksh. " + Amount.ToString();
+        CashAmount.text = "$ " + Amount.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
         // update the cash ui
-        CashAmount.text = "Ksh. " + Amount.ToString();
+        CashAmount.text = "$ " + Amount.ToString();
     }
 
     public void IncreaseCash(int CashToIncrease)
