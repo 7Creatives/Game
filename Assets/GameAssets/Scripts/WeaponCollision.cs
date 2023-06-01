@@ -4,12 +4,34 @@ using UnityEngine;
 
 public class WeaponCollision : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other) {
+    public GameObject TheEnemy;
+    public static int HitCount = 0;
+    private void OnTriggerEnter(Collider other) 
+    {
         if(other.gameObject.GetComponent<EnemyCollisionHandler>() != null)
         {
-            Debug.Log("Hit");
-            GetComponentInParent<CollisionHandler>().enemy.GetComponent<EnemyHealth>().TakeDamage(25);
-            
+            if(GetComponentInParent<PlayerCombat>().isFight == true)
+            {
+                Debug.Log("Hit");
+
+                if(HitCount == 0)
+                {
+                    HitCount = 1;
+                    TheEnemy.GetComponent<EnemyHealth>().TakeDamage(25);
+                }   
+            }
+           
+        }
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        if(GetComponentInParent<PlayerCombat>().isFight ==false)
+        {
+            if(HitCount == 1)
+            {
+                HitCount = 0;
+            }
         }
     }
 }
