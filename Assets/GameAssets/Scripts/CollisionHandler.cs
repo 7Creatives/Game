@@ -5,19 +5,27 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
     public GameObject enemy;
-    private Vector3 Offset;
+    public LayerMask layerMask;
+    public bool isEnemy;
+    private void Start() 
+    {  
+
+    }   
+
     private void OnControllerColliderHit(ControllerColliderHit hit) 
     {
         if(hit.gameObject.GetComponentInChildren<CashSpawner>() != null)
         {
             Debug.Log("Invest");
-            if(GameManager.Instance.CashManager_.Amount>0)
+            if(GameManager.Instance.CashManager_.Amount> 0)
             {
                 GameManager.Instance.CashManager_.DecreaseCash(Mathf.FloorToInt(GameManager.Instance.GamePlayVariables_.AmountToDecrease));
                 hit.gameObject.GetComponentInParent<BuildingHandler>().Unlocker(GameManager.Instance.GamePlayVariables_.AmountToDecrease);
             }
-            
+            else
+            {
 
+            }
             //Unlock building
             hit.gameObject.GetComponentInParent<BulidingManager>().UnlockBuilding();
 
@@ -39,18 +47,28 @@ public class CollisionHandler : MonoBehaviour
 
     private void Update() 
     {
-        float Dist = Vector3.Distance(transform.position,enemy.transform.position);
-        if(Dist<1.5f)
+        if(enemy != null)
         {
-            if(enemy.GetComponentInChildren<EnemyHealth>().isEnemyDead)
+            if(enemy.GetComponent<EnemyHealth>().isEnemyDead)
             {
-
+                enemy = null;
+                GetComponentInChildren<WeaponCollision>().TheEnemy = null;
             }
-            else
-            {
-                //stop
-                transform.position = enemy.transform.position + enemy.transform.InverseTransformDirection(0,0,1.2f);
-            } 
         }
+        else
+        {   
+
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hitData;
+            if(Physics.Raycast(ray,out hitData,4,layerMask))
+            {
+                Debug.Log("Hit Enemy"+ name);
+                // that is the enemy
+                enemy = hitData.transform.GetComponentInParent<EnemyFollowing>().gameObject;
+                GetComponentInChildren<WeaponCollision>().TheEnemy = enemy ;
+            }
+            Debug.DrawRay(ray.origin + new Vector3(0,1,0), ray.direction, Color.red);
+        }
+        
     }
 }

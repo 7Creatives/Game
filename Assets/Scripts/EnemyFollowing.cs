@@ -45,7 +45,7 @@ using UnityEngine;
 				{
 					chasing = true;
 					anim.Play("Run_");
-					transform.position = Vector3.Lerp(transform.position,targetPoint,moveSpeed*Time.deltaTime);
+					transform.position = Vector3.Lerp(transform.position,targetPoint+ new Vector3(0, 0, 0),moveSpeed*Time.deltaTime);
 
 				}
 
@@ -71,7 +71,22 @@ using UnityEngine;
 				}
 				else 
 				{
-					
+					FaceTarget();
+					anim.Play("Idle_");
+					targetPoint = Player.transform.position;
+					// float Dist = Vector3.Distance(transform.position,targetPoint);
+					// if(Dist<1.5f)
+					// {
+					// 	if(GetComponentInChildren<EnemyHealth>().isEnemyDead)
+					// 	{
+
+					// 	}
+					// 	else
+					// 	{
+					// 		//stop
+					// 		transform.position = Player.transform.position + Player.transform.InverseTransformDirection(0,0,1.2f);
+					// 	} 
+					// }
 				} 
 
 				if(Vector3.Distance(transform.position, targetPoint) > distanceToLose)
@@ -82,6 +97,8 @@ using UnityEngine;
 
 				}
 			}
+
+			
 		}
 
 		void FaceTarget()

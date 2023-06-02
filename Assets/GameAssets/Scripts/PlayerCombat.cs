@@ -6,6 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public Animator Anim;
     public bool IsFighting;
+    public bool isFight;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +18,24 @@ public class PlayerCombat : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
+            isFight =true;
             if(!IsFighting)
             {
                 //fight 
                 Anim.SetLayerWeight(1,1);
                 Anim.SetTrigger("Attack");
+                if(GetComponentInParent<CollisionHandler>().enemy != null)
+                {
+                    GetComponentInParent<CollisionHandler>().enemy.GetComponentInChildren<EnemyCombat>().fight = true;
+                }
+               
             }
             IsFighting = true;
           
         }
         else
         {
+            isFight =false;
             if(IsFighting)
             {
                 IsFighting = false;
