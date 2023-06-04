@@ -22,6 +22,7 @@ using UnityEngine;
 		private void Start() 
 		{
 			startPoint =transform.position;
+			GetComponentInChildren<EnemyWeapon_Collision>().Player = Player;
 		}
 
 		void Update()
@@ -68,37 +69,25 @@ using UnityEngine;
 					FaceTarget();
 					anim.Play("Run_");
 					transform.position = Vector3.Lerp(transform.position,targetPoint,moveSpeed*Time.deltaTime);
+					GetComponentInChildren<EnemyCombat>().fight = false;
 				}
 				else 
 				{
 					FaceTarget();
 					anim.Play("Idle_");
 					targetPoint = Player.transform.position;
-					// float Dist = Vector3.Distance(transform.position,targetPoint);
-					// if(Dist<1.5f)
-					// {
-					// 	if(GetComponentInChildren<EnemyHealth>().isEnemyDead)
-					// 	{
-
-					// 	}
-					// 	else
-					// 	{
-					// 		//stop
-					// 		transform.position = Player.transform.position + Player.transform.InverseTransformDirection(0,0,1.2f);
-					// 	} 
-					// }
+					GetComponentInChildren<EnemyCombat>().fight = true;
 				} 
 
 				if(Vector3.Distance(transform.position, targetPoint) > distanceToLose)
 				{
 					chasing = false;
+					targetPoint = startPoint;
 					FaceTarget();
 					chaseCounter = keepChasingTime;
-
 				}
 			}
 
-			
 		}
 
 		void FaceTarget()

@@ -335,7 +335,6 @@ MonoBehaviour:
   Anim: {fileID: 4129301413550466307}
   IsFighting: 0
   fight: 0
-  fightTimestamp: 0
 --- !u!1 &7504312442945542314
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +632,8 @@ GameObject:
   - component: {fileID: 5051824778657869411}
   - component: {fileID: 2569744289831296256}
   - component: {fileID: 8958696567672028679}
+  - component: {fileID: 553813147422189585}
+  - component: {fileID: 2311537946462662663}
   m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
@@ -718,6 +719,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000011}
   m_Center: {x: -0.0000013709068, y: 0.00000035762787, z: -0.000000089407024}
+--- !u!114 &553813147422189585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391139540683049094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a83e7392a07654c8a3755795eca600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+--- !u!54 &2311537946462662663
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391139540683049094}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &7504312442033346706
 PrefabInstance:
   m_ObjectHideFlags: 0

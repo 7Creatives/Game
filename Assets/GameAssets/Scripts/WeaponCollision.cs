@@ -16,12 +16,20 @@ public class WeaponCollision : MonoBehaviour
 
                 if(HitCount == 0)
                 {
+                    
+                    StartCoroutine (Delay());
                     HitCount = 1;
-                    TheEnemy.GetComponent<EnemyHealth>().TakeDamage(25);
                 }   
             }
            
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(1f);
+        if(TheEnemy != null){TheEnemy.GetComponent<EnemyHealth>().TakeDamage(25);}
+        
     }
 
     private void OnTriggerExit(Collider other) 

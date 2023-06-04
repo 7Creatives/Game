@@ -52,7 +52,14 @@ public class PLayerHealth : MonoBehaviour
         if(currentHealth <= 0 && isPlayerDead == false)
         {
             isPlayerDead = true;
-            currentHealth = 0;
+            if(isPlayerDead)
+            {
+                currentHealth = 0;
+                //Game over
+                GetComponentInChildren<Animator>().enabled = false;
+                //restartLevel
+            }
+           
         }
     }
 
@@ -63,16 +70,5 @@ public class PLayerHealth : MonoBehaviour
         healthUI_Green.fillAmount = Mathf.Lerp(healthUI_Green.fillAmount,currentHealth/MaxHealth,HealthUI_rate * Time.deltaTime);
         healthUI_Red.fillAmount = Mathf.Lerp(healthUI_Red.fillAmount,currentHealth/MaxHealth,HealthUI_rate * Time.deltaTime);
 
-        //test
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            IncreaseHealth(10);
-        }
-
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            TakeDamage(5);
-        }
-       
     }
 }

@@ -30,6 +30,7 @@ public class CollisionHandler : MonoBehaviour
             hit.gameObject.GetComponentInParent<BulidingManager>().UnlockBuilding();
 
         }
+       
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -42,6 +43,15 @@ public class CollisionHandler : MonoBehaviour
             GameObject Go = other.gameObject.GetComponentInChildren<Cash>().gameObject;
             //DestroyCash
             Destroy(Go);
+        }
+        else if(other.gameObject.GetComponent<HealthPickUp>() != null)
+        {
+            Debug.Log("Increase Health");
+            if( GetComponent<PLayerHealth>().currentHealth < 100)
+            {
+                GetComponent<PLayerHealth>().IncreaseHealth(25);
+                Destroy(other.gameObject);
+            }
         }
     }
 

@@ -7,7 +7,8 @@ public class EnemyCombat : MonoBehaviour
     public Animator Anim;
     public bool IsFighting;
     public bool fight;
-    public float fightTimestamp;
+    float fightTimestamp;
+    float FightTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class EnemyCombat : MonoBehaviour
     {
         if(fight)
         {
-            if(fightTimestamp<Time.time)
+            if(fightTimestamp < Time.time)
             {
                 if(!IsFighting)
                 {
@@ -27,7 +28,9 @@ public class EnemyCombat : MonoBehaviour
                     Anim.SetTrigger("Attack");
                 }
                 IsFighting = true;
-                fightTimestamp = Time.time+1f;
+                fightTimestamp = Time.time + 1f;
+                fight = false;
+                IsFighting = false;
             }
         }
         else
