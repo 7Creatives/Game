@@ -3,7 +3,67 @@ guid: 954388051f4319e42a95e2de2ca489de
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Balcony
+    second: {fileID: 2100000, guid: abab7fe1a8ac92b449f33601be993c48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doors
+    second: {fileID: 2100000, guid: c2a6d46e9d3052947a4c4fa0f6c0d3fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 501e90053824d0141b98e000fcd54947, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: d8e08882ce14aa74b94ba6cfe81ddcb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rail Post
+    second: {fileID: 2100000, guid: 581bb12b50765e64097f8671b46002a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rail rails
+    second: {fileID: 2100000, guid: ab1ff203352d2684093b0b51a0f8428a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof
+    second: {fileID: 2100000, guid: c7ab5201c5f7b5d4b8f6332a6e3ed991, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slabs
+    second: {fileID: 2100000, guid: 807206c9a349c7a479ea1d797433dbb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Staircase
+    second: {fileID: 2100000, guid: 9806c40dd94657040895266fa64447bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls
+    second: {fileID: 2100000, guid: 03cc9e06f63776b4eaf1a49d0fb2eb38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window
+    second: {fileID: 2100000, guid: ed92dfb5d1dabdb4e81a17234b258886, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Pane
+    second: {fileID: 2100000, guid: ba7db4de8b2e9cc46a72ccc8f752d375, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +97,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1

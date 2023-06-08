@@ -3,7 +3,42 @@ guid: 144286bed497e264d8dda260f40520cd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_
+    second: {fileID: 2100000, guid: 808715281a424224e83591d436fbf1ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 277ea137571d91b4a8a0111a1b37287b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: e7064a8e6f1fe9e4d81aff810d205bab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof_
+    second: {fileID: 2100000, guid: 1ec130cd65cba0f4f91bab51ed7cb61e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window pane
+    second: {fileID: 2100000, guid: 81a80f0881eb067428a555f03f31c659, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_
+    second: {fileID: 2100000, guid: 16af3668d5c73da4a8c11a460a28cc99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: slab
+    second: {fileID: 2100000, guid: d6c3f2ef17d2a264b9d7b7832b488aa5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +72,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
