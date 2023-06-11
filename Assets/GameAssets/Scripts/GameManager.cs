@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GamePlayVariables GamePlayVariables_;
     public PlayerCombat PlayerCombat_;
     public EnemyCombat EnemyCombat_;
+    public BulidingManager BulidingManager_;
+    public EnemyManager EnemyManager_;
     public void Awake()
     {   
         if(Instance != null && Instance != this)

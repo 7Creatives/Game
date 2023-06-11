@@ -11,25 +11,28 @@ public class BuildingHandler : MonoBehaviour
     public Image UnlockImage; 
     public float fillmeter;
 
+    public GameObject Ui;
+
 
     private void Start() 
     {
         // show remaining amount
-        cashToUnlock.text = "Ksh. " + fillmeter.ToString() +"/" + CashAmountToUnlock.ToString(); 
+        cashToUnlock.text = "$ " + fillmeter.ToString() +"/" + CashAmountToUnlock.ToString(); 
     }
 
     private void Update() 
     {
         UnlockImage.fillAmount = (fillmeter/CashAmountToUnlock);
-        if(fillmeter > CashAmountToUnlock)
+        if(fillmeter >= CashAmountToUnlock)
         {
             fillmeter = CashAmountToUnlock;
         }
+        cashToUnlock.text = "$ " + fillmeter.ToString() +"/" + CashAmountToUnlock.ToString(); 
     }
 
     public void Unlocker(float Amount)
     {
         fillmeter = fillmeter + Amount; 
-        cashToUnlock.text = "Ksh. " + fillmeter.ToString() +"/" + CashAmountToUnlock.ToString(); 
+      
     }
 }

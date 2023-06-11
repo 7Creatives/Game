@@ -32,7 +32,7 @@ public class CashManager : MonoBehaviour
         if(Amount <=0)
         {
             Amount = 0;
-            return;
+            //return;
         }
     }
 }

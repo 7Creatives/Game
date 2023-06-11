@@ -34,8 +34,10 @@ public class BulidingManager : MonoBehaviour
                 //unloocking
                 if(_buildings[i].canUnlock)
                 {
+                    _buildings[i].buildingHandler.GetComponentInChildren<CashSpawner>().gameObject.GetComponent<Collider>().enabled = false;
+                    _buildings[i].buildingHandler.Ui.SetActive(false);
                     _buildings[i].canTax = true;
-                   _buildings[i]._Building.SetActive(true); 
+                    _buildings[i]._Building.SetActive(true); 
                    if(_buildings[i].canTax)
                    {
                         GenerateCash();
@@ -63,7 +65,6 @@ public class BulidingManager : MonoBehaviour
         {
             if (cashTimer < Time.time)
             {
-                
                 cashTimer = Time.time + _buildings[i].ProfitRate;
 
                 if(ProfitCollectedTimeStamp < Time.time)
