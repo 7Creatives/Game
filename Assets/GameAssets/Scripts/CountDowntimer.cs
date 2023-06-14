@@ -83,8 +83,13 @@ public class CountDowntimer : MonoBehaviour
 
     public int resumeTimer()
     {
-        shouldCount = false;
+        shouldCount = true;
 
         return Mathf.FloorToInt(timeValue);
+    }
+
+    public void IncreaseCountDownTimer(float Time)
+    {
+        timeValue = timeValue + Time;
     }
 }

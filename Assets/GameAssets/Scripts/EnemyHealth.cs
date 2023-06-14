@@ -31,13 +31,16 @@ public class EnemyHealth : MonoBehaviour
         if(currentHealth <= 0 && isEnemyDead == false)
         {
             isEnemyDead = true;
-            if(isEnemyDead){
+            if(isEnemyDead)
+            {
                 //spawn cash
                 for (int i = 0; i < CashToSpawn; i++)
                 {
                     GameObject Go = Instantiate(Cashitem,cashparent);
                     Go.transform.position = transform.position + new Vector3(0, .5f, 0);
-                }   
+                }
+
+                GameManager.Instance.CountDowntimer_.IncreaseCountDownTimer(GameManager.Instance.GamePlayVariables_.TimeToIncrease);   
                
             }
             //GetComponentInParent<EnemyController>().Enemies.Remove(this.gameObject);
@@ -52,5 +55,6 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         EM_healthUI_Red.fillAmount = Mathf.Lerp(EM_healthUI_Red.fillAmount,currentHealth/MaxHealth,HealthUI_rate * Time.deltaTime);
+        //GameManager.Instance.CountDowntimer_.IncreaseCountDownTimer(GameManager.Instance.GamePlayVariables_.TimeToIncrease);   
     }
 }

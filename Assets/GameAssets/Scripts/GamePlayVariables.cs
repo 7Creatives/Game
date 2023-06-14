@@ -10,4 +10,5 @@ public class GamePlayVariables : MonoBehaviour
     public bool isWalkPos;
     public bool isRunPos;
     public float degreesPerSecond_HealthpicUp;
+    public float TimeToIncrease;
 }

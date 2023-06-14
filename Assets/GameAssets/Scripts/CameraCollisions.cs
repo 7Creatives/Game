@@ -22,8 +22,8 @@ public class CameraCollisions : MonoBehaviour
         defaultDistance = Vector3.Distance(defaultPos, Vector3.zero);
 
         //Lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
     }
 
     // LateUpdate is called after Update

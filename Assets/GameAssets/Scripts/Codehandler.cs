@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Codehandler : MonoBehaviour
 {
+    public Loader loader_;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -20,6 +21,6 @@ public class Codehandler : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        loader_.Load();
     }
 }

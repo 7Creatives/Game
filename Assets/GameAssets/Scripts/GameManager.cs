@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public EnemyCombat EnemyCombat_;
     public BulidingManager BulidingManager_;
     public EnemyManager EnemyManager_;
+
+    public CountDowntimer CountDowntimer_;
+    public MovementHandler MovementHandler_;
     public void Awake()
     {   
         if(Instance != null && Instance != this)
@@ -23,4 +26,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    
 }
