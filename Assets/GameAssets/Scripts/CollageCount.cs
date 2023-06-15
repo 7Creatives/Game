@@ -6,6 +6,7 @@ using UnityEngine;
 public class CollageCount : MonoBehaviour
 {
     public TMP_Text CollageCounter;
+    public int counter;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,13 @@ public class CollageCount : MonoBehaviour
                 Count++;
            }
         }  
+        counter = Count;
         return Count;
+    }
+
+    public int GetTotalCollages()
+    {
+        int totalcollages =  GameManager.Instance.BulidingManager_._buildings.Length;
+        return  totalcollages;
     }
 }

@@ -23,4 +23,9 @@ public class Codehandler : MonoBehaviour
     {
         loader_.Load();
     }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }

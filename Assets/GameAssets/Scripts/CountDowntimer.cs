@@ -42,7 +42,7 @@ public class CountDowntimer : MonoBehaviour
         {
             timeValue = 0;
             //GameOverHandler.instance.EndGame();
-            GameManager.Instance.PlayerCombat_.Anim.enabled =false;
+            //GameManager.Instance.PlayerCombat_.Anim.enabled =false;
         }
         DisplayTime(timeValue);
     }

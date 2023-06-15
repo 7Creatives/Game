@@ -22,7 +22,17 @@ public class Loader : MonoBehaviour
     }
     IEnumerator StartLoad()
     {
-        Menu.SetActive(false);
+        if(Menu == null)
+        {
+
+        }
+        else
+        {
+            Menu.SetActive(false);
+        }
+        
+        yield return new WaitForSeconds(1);
+
         loadingScreen.SetActive(true);
         yield return StartCoroutine(FadeLoadingScreen(1, 1));
         loadingOperation = SceneManager.LoadSceneAsync(sceneToLoad);

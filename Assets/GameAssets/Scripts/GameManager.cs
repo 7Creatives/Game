@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour
 
     public CountDowntimer CountDowntimer_;
     public MovementHandler MovementHandler_;
+
+    public PLayerHealth playerHealth_;
+    public EnemyCount EnemyCount_;
+    public CollageCount CollageCount_;
+
+    public Loader Loader_;
     public void Awake()
     {   
         if(Instance != null && Instance != this)

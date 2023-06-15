@@ -36,4 +36,10 @@ public class EnemyCount : MonoBehaviour
         DeadEnemyCount = count;
         return count;
     }
+
+    public int GetTotalEnemies()
+    {
+        int totalEnemies = GameManager.Instance.EnemyManager_.Enemies.Length;
+        return totalEnemies;
+    }
 }
