@@ -63,6 +63,7 @@ public class LevelManager : MonoBehaviour
 
     public void returnToMainMenu()
     {
+        Time.timeScale = 1;
         if(Win())
        {
             winscreen.SetActive(false);
@@ -72,7 +73,7 @@ public class LevelManager : MonoBehaviour
             GameOverscreen.SetActive(false);
        }
 
-       GameManager.Instance.Loader_.sceneToLoad = sceneToload[1];
+       GameManager.Instance.Loader_.sceneToLoad = sceneToload[1].ToString();
        GameManager.Instance.Loader_.Load();
     }
 

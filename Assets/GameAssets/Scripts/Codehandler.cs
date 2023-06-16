@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Codehandler : MonoBehaviour
 {
     public Loader loader_;
+    public string sceneToLoad_;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Codehandler : MonoBehaviour
 
     public void PlayGame()
     {
+        loader_.sceneToLoad = sceneToLoad_;
         loader_.Load();
     }
 

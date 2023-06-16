@@ -10,7 +10,6 @@ public class UI_CamMovement : MonoBehaviour
    private void OnEnable() 
    {
         DontDestroyOnLoad(gameObject);
-        Move();
    }
     // Update is called once per frame
   
