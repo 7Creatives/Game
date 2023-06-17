@@ -31,6 +31,13 @@ public class EnemyCombat : MonoBehaviour
                 fightTimestamp = Time.time + 1f;
                 fight = false;
                 IsFighting = false;
+
+                if(GameManager.Instance.playerHealth_.isPlayerDead)
+                {
+                    fight = false;
+                    IsFighting =false;
+                    Anim.SetLayerWeight(1,0);
+                }
             }
         }
         else
@@ -39,6 +46,11 @@ public class EnemyCombat : MonoBehaviour
             {
                 IsFighting =false;
                 Anim.SetLayerWeight(1,0);
+                if(GameManager.Instance.playerHealth_.isPlayerDead)
+                {
+                    IsFighting =false;
+                    Anim.SetLayerWeight(1,0);
+                }
             }
         }
     }
