@@ -3272,7 +3272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f318c9e183d4c4b81e7b1fbc24724e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 2000
+  Amount: 0
   CashAmount: {fileID: 424483829}
 --- !u!1 &225440742
 GameObject:
@@ -7457,7 +7457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1474940763}
   uiFillImage: {fileID: 294876250}
-  timeValue: 180
+  timeValue: 120
 --- !u!1 &521898105
 GameObject:
   m_ObjectHideFlags: 0

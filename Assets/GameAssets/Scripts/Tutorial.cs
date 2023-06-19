@@ -32,6 +32,6 @@ public class Tutorial : MonoBehaviour
         Objectives.SetActive(false);
         GameManager.Instance.CountDowntimer_.resumeTimer();
         GameManager.Instance.MovementHandler_.enabled =true;
-        GameManager.Instance.MovementHandler_.enabled =true;
+        GameManager.Instance.PlayerCombat_.enabled =true;
     }
 }
